@@ -1,0 +1,267 @@
+
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --accent-color: #e74c3c;
+    --accent-hover: #c0392b;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --border-radius: 12px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.5px;
+    font-weight: 700;
+  }
+  
+  .subtitle {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  
+  .content {
+    display: grid;
+    gap: 2rem;
+    animation: slideUp 0.8s ease 0.3s both;
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .feature-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+  }
+  
+  .camera-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  #videoElement {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background-color: #2c3e50;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: block;
+  }
+  
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+  }
+  
+  #prediction {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 1rem 0;
+    font-weight: 500;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .camera-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+  }
+  
+  .camera-btn {
+    padding: 12px 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+  }
+  
+  .camera-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+  }
+  
+  .camera-btn:active {
+    transform: translateY(-1px);
+  }
+  
+  .camera-btn:disabled {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  #startCamera {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+  }
+  
+  #startCamera:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 6px 8px rgba(231, 76, 60, 0.4);
+  }
+  
+  .speech-btn {
+    background-color: #27ae60;
+    box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+  }
+  
+  .speech-btn:hover {
+    background-color: #219653;
+    box-shadow: 0 6px 8px rgba(39, 174, 96, 0.4);
+  }
+  
+  .speech-btn.off {
+    background-color: #e67e22;
+    box-shadow: 0 4px 6px rgba(230, 126, 34, 0.3);
+  }
+  
+  .language-selector {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    background: var(--card-bg);
+    padding: 8px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .language-selector label {
+    margin-right: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .language-dropdown {
+    padding: 6px 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    background-color: white;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .language-dropdown:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    .feature-card {
+      padding: 1.5rem;
+    }
+    
+    .camera-btn {
+      padding: 10px 20px;
+    }
+  }
+  
